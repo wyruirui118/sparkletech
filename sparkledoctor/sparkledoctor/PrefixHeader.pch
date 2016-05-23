@@ -1,0 +1,52 @@
+//
+//  PrefixHeader.pch
+//  sparkledoctor
+//
+//  Created by wangyunrui on 16/3/21.
+//  Copyright © 2016年 sparkletech. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <Foundation/Foundation.h>
+#import "AFNetworking.h"
+#import "RequestHeader.h"
+#import "ZmHttptool.h"
+#import "UIImageView+WebCache.h"
+
+#import "wyrAccountTool.h"
+#import "wyrAccount.h"
+
+//短信SDK头文件
+#import "SMS_SDK/SMSSDK.h"
+
+#define WIDTH CGRectGetWidth([UIScreen mainScreen].bounds)
+#define HEIGTH CGRectGetHeight([UIScreen mainScreen].bounds)
+//短信验证appKey
+//static关键字会在声明变量的时候分配内存,在程序运行期间只分配一次内存.之后再访问时,实际都是在访问原先分配的内存.这适合用于存储创建时使用大量的资源,并且不常改变的局部变量.
+static NSString * appKey=@"12266071d6da8";
+//短信验证appSecret
+static NSString * appSecret = @"6dff0e292f02e1bdc46fd57dfd3abaf3";
+
+//block
+typedef void(^ErrorBlock)();
+typedef void(^TureBlock)(NSString *phoneNumber);
+typedef void(^SMSErrorBlock)(id error);
+typedef void(^PassWordTureBlock)(NSString * password);
+typedef void(^passWordErrorBlock)();
+
+//随机色
+#define wyrRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0  blue:arc4random_uniform(256)/255.0  alpha:1.0]
+//RGB颜色
+#define wyrColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+//MBProgressHUD
+#import "MBProgressHUD.h"
+
+//类别
+#import "UIWindow+Extension.h"
+#import "UIView+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIButton+Extension.h"
+#endif /* PrefixHeader_pch */
